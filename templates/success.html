@@ -1,0 +1,26 @@
+{% extends "layout.html" %}
+{% block content %}<br>
+    <br>
+<div class="successText" >
+    Your submission was successful! <br>
+
+{%  if "InClass" not in form.form_name %}
+
+    {% if correct == false %}
+        {% if incomplete == true %}
+            <p class="error-message">This response is not complete. Please fill out all sections and provide responses even if you couldn't get the correct answer</p>
+        {%  else  %}
+            <p class="error-message">This response is not correct however you can still pass this Practical provided that you have explained why you couldn't get the correct answer.</p>
+        {%  endif %}
+    {%  elif not inclass %}
+            <p class="correct-message"> This response has all correct answers</p>
+    {%  endif %}
+    <a href="{{ url_for('submissiondynamic') }}">View submissions</a> <br>
+    <a href="{{ url_for('landing') }}">Go back to home page</a><br>
+
+{%  endif %}
+
+
+</div>
+
+{% endblock %}

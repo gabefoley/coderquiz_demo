@@ -1,0 +1,12 @@
+error.log
+.DS_Store
+*.pyc
+.idea/
+
+
+__pycache__/*
+*cpython-35.pyc
+./uploads/*
+uploads/
+__pycache__/
+

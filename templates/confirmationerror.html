@@ -1,0 +1,11 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="landingText" >
+
+    {{ registration_message }} <br>
+    <a href="{{ url_for('login') }}">Login</a><br>
+    <a href="{{ url_for('signup') }}">Sign up</a><br>
+
+</div>
+
+{% endblock %}

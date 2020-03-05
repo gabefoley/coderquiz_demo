@@ -1,0 +1,351 @@
+CREATE TABLE users(
+	uid SERIAL PRIMARY KEY NOT NULL,
+	firstname TEXT NOT NULL, 
+	lastname TEXT NOT NULL,  
+	studentno INTEGER NOT NULL, 
+	email TEXT NOT NULL, 
+	pwdhash TEXT NOT NULL, 
+	email_confirmation_sent_on TIMESTAMP, 
+	email_confirmed BOOLEAN, 
+	email_confirmed_on TIMESTAMP,
+	constraint valid_number
+	check (studentno>9999999 and studentno<=99999999)
+);
+
+CREATE TABLE scie2100practical1 (
+    submissionid SERIAL PRIMARY KEY NOT NULL,
+    studentno INTEGER,
+    submissiontime TIMESTAMP,
+    correct BOOLEAN,
+    incomplete BOOLEAN,
+    q1 TEXT NOT NULL,
+    q2a TEXT NOT NULL,
+    q2b TEXT NOT NULL,
+    q3a TEXT NOT NULL,
+    q3b TEXT NOT NULL,
+    q4a TEXT NOT NULL,
+    q4b TEXT NOT NULL,
+    q4_code BYTEA NOT NULL,
+    q5 TEXT NOT NULL,
+    q5_code BYTEA NOT NULL,
+    q6a TEXT NOT NULL,
+    q6b TEXT NOT NULL,
+    q6c_image TEXT NOT NULL,
+    q6d TEXT NOT NULL
+);
+
+CREATE TABLE scie2100practical2 (
+    submissionid SERIAL PRIMARY KEY NOT NULL,
+    studentno INTEGER,
+    submissiontime TIMESTAMP,
+    correct BOOLEAN,
+    incomplete BOOLEAN,
+    q1a TEXT NOT NULL,
+    q1b TEXT NOT NULL,
+    q1c TEXT NOT NULL,
+    q1d TEXT NOT NULL,
+    q2a TEXT NOT NULL,
+    q2b TEXT NOT NULL,
+    q2c TEXT NOT NULL,
+    q2d TEXT NOT NULL,
+    q3_code BYTEA NOT NULL,
+    q3b TEXT NOT NULL,
+    q3c TEXT NOT NULL,
+    q4a TEXT NOT NULL,
+    q4b TEXT NOT NULL,
+    q4c TEXT NOT NULL,
+    q4d TEXT NOT NULL
+);
+
+CREATE TABLE scie2100practical3 (
+    submissionid SERIAL PRIMARY KEY NOT NULL,
+    studentno INTEGER,
+    submissiontime TIMESTAMP,
+    correct BOOLEAN,
+    incomplete BOOLEAN,
+    q1 TEXT NOT NULL,
+    q2a TEXT NOT NULL,
+    q2b TEXT NOT NULL,
+    q2c TEXT NOT NULL,
+    q3a TEXT NOT NULL,
+    q3b_code BYTEA NOT NULL,
+    q3c TEXT NOT NULL,
+    q4a TEXT NOT NULL,
+    q4b_code BYTEA NOT NULL,
+    q5 TEXT NOT NULL
+);
+
+CREATE TABLE scie2100practical4 (
+    submissionid SERIAL PRIMARY KEY NOT NULL,
+    studentno INTEGER,
+    submissiontime TIMESTAMP,
+    correct BOOLEAN,
+    incomplete BOOLEAN,
+    q1a_code BYTEA NOT NULL,
+    q1b TEXT NOT NULL,
+    q1c TEXT NOT NULL,
+    q2a_code BYTEA NOT NULL,
+    q2b TEXT NOT NULL,
+    q3a_image TEXT NOT NULL,
+    q3b_code BYTEA NOT NULL,
+    q4a TEXT NOT NULL,
+    q4b TEXT NOT NULL
+);
+
+CREATE TABLE scie2100practical5 (
+    submissionid SERIAL PRIMARY KEY NOT NULL,
+    studentno INTEGER,
+    submissiontime TIMESTAMP,
+    correct BOOLEAN,
+    incomplete BOOLEAN,
+    q1a TEXT NOT NULL,
+    q1b TEXT NOT NULL,
+    q1c TEXT NOT NULL,
+    q2a TEXT NOT NULL,
+    q2b TEXT NOT NULL,
+    q2c TEXT NOT NULL,
+    q2d TEXT NOT NULL,
+    q3a TEXT NOT NULL,
+    q3b TEXT NOT NULL,
+    q4a TEXT NOT NULL,
+    q4b TEXT NOT NULL
+);
+
+CREATE TABLE scie2100practical6 (
+    submissionid SERIAL PRIMARY KEY NOT NULL,
+    studentno INTEGER,
+    submissiontime TIMESTAMP,
+    correct BOOLEAN,
+    incomplete BOOLEAN,
+    q1_code BYTEA NOT NULL,
+    q2 TEXT NOT NULL,
+    q3 TEXT NOT NULL,
+    q4 TEXT NOT NULL,
+    q5 TEXT NOT NULL,
+    q6a1 TEXT NOT NULL,
+    q6a2 TEXT NOT NULL,
+    q6a3 TEXT NOT NULL,
+    q6a4 TEXT NOT NULL,
+    q6b TEXT NOT NULL,
+    q6c TEXT NOT NULL,
+    q6d_code BYTEA NOT NULL,
+    q7a1 TEXT NOT NULL,
+    q7a2 TEXT NOT NULL,
+    q7a3 TEXT NOT NULL,
+    q7a4 TEXT NOT NULL,
+    q7a5 TEXT NOT NULL,
+    q7b1 TEXT NOT NULL,
+    q7b2 TEXT NOT NULL,
+    q7b3 TEXT NOT NULL,
+    q7b4 TEXT NOT NULL,
+    q7b5 TEXT NOT NULL,
+    q7c1 TEXT NOT NULL,
+    q7c2 TEXT NOT NULL,
+    q7c3 TEXT NOT NULL,
+    q7c4 TEXT NOT NULL,
+    q7c5 TEXT NOT NULL,
+    q7d TEXT NOT NULL,
+    q7e_code BYTEA NOT NULL,
+    q7f TEXT NOT NULL
+
+);
+
+CREATE TABLE scie2100inclass1 (
+    submissionid SERIAL PRIMARY KEY NOT NULL,
+    studentno INTEGER,
+    submissiontime TIMESTAMP,
+    correct BOOLEAN,
+    incomplete BOOLEAN,
+    q1 TEXT NOT NULL,
+    q2a TEXT NOT NULL,
+    q2b TEXT NOT NULL,
+    q2c TEXT NOT NULL,
+    q3 TEXT NOT NULL,
+    q4a TEXT NOT NULL,
+    q4b TEXT NOT NULL,
+    q4_code BYTEA NOT NULL
+);
+
+CREATE TABLE scie2100inclass2 (
+    submissionid SERIAL PRIMARY KEY NOT NULL,
+    studentno INTEGER,
+    submissiontime TIMESTAMP,
+    correct BOOLEAN,
+    incomplete BOOLEAN,
+    q1a TEXT NOT NULL,
+    q1b TEXT NOT NULL,
+    q2 TEXT NOT NULL,
+    q2_code BYTEA NOT NULL,
+    q3 TEXT NOT NULL,
+    q3_code BYTEA NOT NULL
+
+);
+
+CREATE TABLE scie2100inclass3 (
+    submissionid SERIAL PRIMARY KEY NOT NULL,
+    studentno INTEGER,
+    submissiontime TIMESTAMP,
+    correct BOOLEAN,
+    incomplete BOOLEAN,
+    q1 TEXT NOT NULL,
+    q2a TEXT NOT NULL,
+    q2b TEXT NOT NULL,
+    q2_code BYTEA NOT NULL,
+    q3 TEXT NOT NULL,
+    q4 TEXT NOT NULL,
+    q4_code BYTEA NOT NULL
+);
+
+CREATE TABLE biol3014practical1 (
+    submissionid SERIAL PRIMARY KEY NOT NULL,
+    studentno INTEGER,
+    submissiontime TIMESTAMP,
+    correct BOOLEAN,
+    incomplete BOOLEAN,
+    q1a TEXT NOT NULL,
+    q1b TEXT NOT NULL,
+    q1c TEXT NOT NULL,
+    q2 TEXT NOT NULL,
+    q3a_code BYTEA NOT NULL,
+    q3b TEXT NOT NULL,
+    q4a_code BYTEA NOT NULL,
+    q4b TEXT NOT NULL,
+    q4c TEXT NOT NULL,
+    q4d TEXT NOT NULL,
+    q5a TEXT NOT NULL,
+    q5b TEXT NOT NULL,
+    q5c TEXT NOT NULL
+
+);
+
+CREATE TABLE biol3014practical2 (
+    submissionid SERIAL PRIMARY KEY NOT NULL,
+    studentno INTEGER,
+    submissiontime TIMESTAMP,
+    correct BOOLEAN,
+    incomplete BOOLEAN,
+    q1a_code BYTEA NOT NULL,
+    q1b TEXT NOT NULL,
+    q2a TEXT NOT NULL,
+    q2b TEXT NOT NULL,
+    q2c TEXT NOT NULL,
+    q3a TEXT NOT NULL,
+    q3b TEXT NOT NULL,
+    q3c TEXT NOT NULL,
+    q4 TEXT NOT NULL,
+    q5a TEXT NOT NULL,
+    q5b TEXT NOT NULL,
+    q5c TEXT NOT NULL,
+    q5c_code BYTEA NOT NULL,
+    q5d TEXT NOT NULL,
+    q5d_code BYTEA NOT NULL,
+    q5e1 TEXT NOT NULL,
+    q5e2 TEXT NOT NULL,
+    q5e_code BYTEA NOT NULL,
+    q6a TEXT NOT NULL,
+    q6b TEXT NOT NULL,
+    q6b_code BYTEA NOT NULL
+
+);
+
+CREATE TABLE biol3014practical3 (
+    submissionid SERIAL PRIMARY KEY NOT NULL,
+    studentno INTEGER,
+    submissiontime TIMESTAMP,
+    correct BOOLEAN,
+    incomplete BOOLEAN,
+    q1a TEXT NOT NULL,
+    q1b TEXT NOT NULL,
+    q2a TEXT NOT NULL,
+    q2b TEXT NOT NULL,
+    q3 TEXT NOT NULL,
+    q4 TEXT NOT NULL,
+    q5 TEXT NOT NULL,
+    q6a TEXT NOT NULL,
+    q6b TEXT NOT NULL,
+    q7_code BYTEA NOT NULL,
+    q8 TEXT NOT NULL
+);
+
+CREATE TABLE biol3014practical4 (
+    submissionid SERIAL PRIMARY KEY NOT NULL,
+    studentno INTEGER,
+    submissiontime TIMESTAMP,
+    correct BOOLEAN,
+    incomplete BOOLEAN,
+    q1a TEXT NOT NULL,
+    q1b TEXT NOT NULL,
+    q1c TEXT NOT NULL,
+    q1d TEXT NOT NULL,
+    q1d_code BYTEA NOT NULL,
+    q2a TEXT NOT NULL,
+    q2b TEXT NOT NULL,
+    q2c TEXT NOT NULL,
+    q2d TEXT NOT NULL,
+    q2e TEXT NOT NULL
+
+);
+
+
+CREATE TABLE biol3014inclass1 (
+    submissionid SERIAL PRIMARY KEY NOT NULL,
+    studentno INTEGER,
+    submissiontime TIMESTAMP,
+    correct BOOLEAN,
+    incomplete BOOLEAN,
+    q1a TEXT NOT NULL,
+    q1b TEXT NOT NULL,
+    q1c TEXT NOT NULL,
+    q2a TEXT NOT NULL,
+    q2b TEXT NOT NULL,
+    q2c TEXT NOT NULL,
+    q3a TEXT NOT NULL,
+    q3b TEXT NOT NULL,
+    q3c TEXT NOT NULL
+
+
+);
+
+CREATE TABLE biol3014inclass2 (
+    submissionid SERIAL PRIMARY KEY NOT NULL,
+    studentno INTEGER,
+    submissiontime TIMESTAMP,
+    correct BOOLEAN,
+    incomplete BOOLEAN,
+    q1 TEXT NOT NULL,
+    q2a TEXT NOT NULL,
+    q2b TEXT NOT NULL,
+    q3a TEXT NOT NULL,
+    q3b TEXT NOT NULL,
+    q3c1 TEXT NOT NULL,
+    q3c2 TEXT NOT NULL,
+    q3c3 TEXT NOT NULL
+
+);
+
+
+
+CREATE TABLE practice (
+    submissionid SERIAL PRIMARY KEY NOT NULL,
+    studentno INTEGER,
+    submissiontime TIMESTAMP,
+    correct BOOLEAN,
+    incomplete BOOLEAN,
+    q1 TEXT NOT NULL,
+    q2 TEXT NOT NULL,
+    q3 TEXT NOT NULL,
+    q4_image TEXT NOT NULL
+
+    );
+
+CREATE TABLE example (
+    submissionid SERIAL PRIMARY KEY NOT NULL,
+    studentno INTEGER,
+    submissiontime TIMESTAMP,
+    correct BOOLEAN,
+    incomplete BOOLEAN,
+    q1 TEXT NOT NULL,
+    q2 TEXT NOT NULL,
+    q3_code BYTEA NOT NULL,
+    q4_image TEXT NOT NULL
+);

@@ -1,0 +1,51 @@
+{% extends "layout.html" %}
+{% block content %}
+    <div class="query-group" >
+<form method="POST" >
+    {{ form.hidden_tag() }}
+        {{ form.assessment_item.label }}
+        {{ form.assessment_item() }}<br><br>
+        {{ form.submit(class="btn-primary") }}
+        <p class="error-message">{{ errors }}</p>
+
+    {%  if generated_results %}
+            {%  if generated_results["Correct"] %}
+                <br>
+                Correct
+                {% for result in generated_results["Correct"] %}
+                <li><a href="{{ url_for('marking_with_token', token = result[0], item = item)}}">{{ result[0]|string + " " +  result[1] + " " + result[2]   }}</a></li>
+                {%  endfor %}
+            {%  endif %}
+
+            {%  if generated_results["Complete"] %}
+                <br>
+                Complete but incorrect
+                {% for result in generated_results["Complete"] %}
+                <li><a href="{{ url_for('marking_with_token', token = result[0], item = item)}}">{{ result[0]|string + " " +  result[1] + " " + result[2]   }}</a></li>
+                {%  endfor %}            {%  endif %}
+
+        {%  if generated_results["Incomplete"] %}
+                <br>
+                Incomplete
+                {% for result in generated_results["Incomplete"] %}
+                <li><a href="{{ url_for('marking_with_token', token = result[0], item = item)}}">{{ result[0]|string + " " +  result[1] + " " + result[2]   }}</a></li>
+                {%  endfor %}            {%  endif %}
+
+        {%  if generated_results["Late"] %}
+                <br>
+                Late
+                {% for result in generated_results["Late"] %}
+                <li><a href="{{ url_for('marking_with_token', token = result[0], item = item)}}">{{ result[0]|string + " " +  result[1] + " " + result[2]   }}</a></li>
+                {%  endfor %}            {%  endif %}
+
+        {%  if generated_results["Missing"] %}
+                <br>
+                Missing
+                {% for result in generated_results["Missing"] %}
+                <li><a href="{{ url_for('marking_with_token', token = result[0], item = item)}}">{{ result[0]|string + " " +  result[1] + " " + result[2]   }}</a></li>
+                {%  endfor %}        {%  endif %}
+    {%  endif %}
+
+</form>
+    </div>
+{% endblock %}

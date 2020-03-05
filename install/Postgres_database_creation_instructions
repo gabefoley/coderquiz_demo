@@ -1,0 +1,10 @@
+CREATE DATABASE coderquiz2020;
+
+\c coderquiz2020;
+
+<create the database schema>
+
+grant all privileges on all tables in schema public to "www-data";
+grant all privileges on all sequences in schema public to "www-data";
+
+

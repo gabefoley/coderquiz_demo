@@ -1,0 +1,3 @@
+psql coderquiz2019 -U postgres;
+select * from users;
+delete from users where users.studentno = '12345678';

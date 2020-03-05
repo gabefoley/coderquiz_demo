@@ -1,0 +1,95 @@
+
+{% extends "layout.html" %}
+
+{% block content %}
+  <main class="hero-section">
+    <div class="container">
+      
+
+      <div class="section-map">
+        <div class="nav">
+
+
+          <form method="POST" enctype = "multipart/form-data" >
+            {{ form.hidden_tag() }}
+
+
+            
+            <div class="form-group">
+
+
+            <div class="intro-text">
+                This is a practice quiz to get you used to the Coder Quiz format.  <br> <br>
+                Try answering the questions below and at any time that you wish you can hit the "CHECK ANSWERS" button to
+                see how you're doing. When you're ready to submit hit the "SUBMIT ANSWERS" button and navigate to the
+                    'View Submissions' page to check your results. <br><br>
+
+                    Coder Quiz will let you submit an incomplete quiz, but if you try this out you will see that it is
+                allowed but flagged as containing incorrect answers on the 'View Submissions' page.
+            </div>
+                 {% with messages = get_flashed_messages() %}
+                      {% if messages %}
+                        <ul>
+                        {% for message in messages %}
+                            <li>{{ message }} </li>
+                        {% endfor %}
+                        </ul>
+                      {% endif %}
+                    {% endwith %}
+
+                {% for question in questions %}
+
+                    {# Place the question label and the input box  #}
+
+                    {{ form[question].label}}
+
+                    {{ form[question]}}
+
+                    {% if form.check.data %}
+
+
+
+                        {# If there is an error and there isn't code or an image in the session variable - display it #}
+
+                        {% if form[question].errors and session.get(form.form_name + "_" + question) == None %}
+                            {% for error in form[question].errors %}
+                                <p class="error-message">{{ error }}</p>
+                            {% endfor %}
+                        {%  elif session.get(form.form_name + "_" + question) == None and ('code' in question or 'image'
+                                in question) %}
+                            <p class="error-message"> Format of file was not correct </p>
+
+                        {% else %}
+                            {# Change the correct message if it's a code upload form or an image upload form #}
+                            {% if 'code' in question %}
+                                <p class="correct-message"> Code is attached </p>
+
+                            {% elif 'image' in question %}
+                                <p class="correct-message"> Image is attached </p>
+                            {% else %}
+                                <p class="correct-message"> Answer accepted </p>
+                            {% endif %}
+                        {% endif %}
+                    {%  endif %}
+
+                {%  endfor %}
+            </div>
+
+              <div>
+            {{ form.check (class ="btn-primary")  }}
+            {{ form.submit (class = "btn-primary")  }}
+              </div>
+
+          </form>
+
+
+      <div class="clearfix"></div>
+    </div>
+      </div>
+    </div>
+  </main>
+
+
+{% endblock %}
+
+
