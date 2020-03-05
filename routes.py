@@ -21,7 +21,7 @@ import importlib
 
 application = Flask(__name__, static_url_path="")
 
-application.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql:///coderquiz2019'
+application.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql:///coderquiz_demo'
 application.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = True
 application.config['UPLOADED_IMAGES_DEST'] = os.getcwd() + "/static/uploads"
 application.config['UPLOADED_SCRIPTS_DEST'] = os.getcwd() + "/static/scripts"
@@ -41,7 +41,7 @@ db.init_app(application)
 
 application.secret_key = 'set_this_key_outside_if_deployed'
 
-BASE_ROUTE = '/coderquiz'
+BASE_ROUTE = '/coderquiz_demo'
 
 models_module = importlib.import_module('models')
 forms_module = importlib.import_module('forms')
